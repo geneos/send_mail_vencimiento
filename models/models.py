@@ -20,14 +20,8 @@ class SendMailVencimiento(models.Model):
             'mimetype': 'application/x-pdf',
         }
         data_id = self.env['ir.attachment'].sudo().create(ir_values)
-
         template = self.env.ref('send_mail_vencimiento.report_template')
-
         template.attachment_ids = [(6, 0, [data_id.id])]
-        '''
-        email_values = {'email_to': self.env.user.email,
-                        'email_from': self.env.user.email}
-        '''
         email_values = {'email_to': 'servitel01@gmail.com',
                         'email_from': 'info@geneos.com.ar',
                         'subject': 'Productos a vencer'}

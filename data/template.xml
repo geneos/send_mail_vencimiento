@@ -16,17 +16,17 @@
         <field name="lang">es_ES</field>
         <field name="body_html" type="html">
             <div style="margin: 0px; padding: 0px;">
-    <p style="margin: 0px; padding: 0px; font-size: 13px;">
-        Hola, Celimundo<br />
-        Envio el listado de productos con vencimiento en los próximos 30 días.
-        <br /><br />
-        Saludos Cordiales, <br />
-        Odoo.
-        <br /><br />
-        <br /><br />
-        No responda este mail, se genera de forma automática.
-    </p>
-</div>
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hola, Celimundo<br />
+                    Envio el listado de productos con vencimiento en los próximos 30 días.
+                    <br /><br />
+                    Saludos Cordiales, <br />
+                    Odoo.
+                    <br /><br />
+                    <br /><br />
+                    No responda este mail, se genera de forma automática.
+                </p>
+            </div>
         </field>
 
     </record>
