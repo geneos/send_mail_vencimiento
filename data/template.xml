@@ -1,6 +1,6 @@
 <odoo>
     <record id="alert_test" model="ir.cron">
-        <field name="name">send alert email</field>
+        <field name="name">Enviar Mail Lotes a Vencer</field>
         <field name="model_id" ref="stock.model_stock_production_lot"/>
         <field name="state">code</field>
         <field name="code">model.send_email_with_attachment()</field>
