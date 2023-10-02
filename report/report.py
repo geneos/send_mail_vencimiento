@@ -14,7 +14,7 @@ class product_static(models.AbstractModel):
         tope = tope.strftime("%Y-%m-%d %H:%M:%S")
         product_ids = self.env['stock.production.lot'].search([
             ('life_date', '<', tope)
-        ], order="name desc")
+        ], order="life_date asc")
 
         return  {
            'product':product_ids,
