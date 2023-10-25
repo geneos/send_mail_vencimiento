@@ -23,6 +23,7 @@ class SendMailVencimiento(models.Model):
         template = self.env.ref('send_mail_vencimiento.report_template')
         template.attachment_ids = [(6, 0, [data_id.id])]
         email_values = {'email_to': 'celimundotandil@gmail.com',
+        #email_values = {'email_to': 'servitel01@gmail.com',
                         'email_from': 'info@geneos.com.ar',
                         'subject': 'Productos a vencer'}
 

@@ -12,10 +12,15 @@ class product_static(models.AbstractModel):
         today = datetime.today()
         tope = today + timedelta(days=30)
         tope = tope.strftime("%Y-%m-%d %H:%M:%S")
-        product_ids = self.env['stock.production.lot'].search([
-            ('life_date', '<', tope)
+        product_ids = self.env['stock.production.lot'].search(
+        [
+            ('life_date', '<', tope),
         ], order="life_date asc")
+        productos = []
+        for item in product_ids:
+            if item.product_qty != 0:
+                productos.append(item)
 
-        return  {
-           'product':product_ids,
+        return {
+           'product':productos,
          }
