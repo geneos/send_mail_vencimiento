@@ -18,7 +18,7 @@ class product_static(models.AbstractModel):
         ], order="life_date asc")
         productos = []
         for item in product_ids:
-            if item.product_qty != 0 and item.active:
+            if item.product_qty != 0 and item.product_id.active:
                 productos.append(item)
 
         return {
