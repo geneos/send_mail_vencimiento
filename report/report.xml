@@ -24,7 +24,7 @@
                                     <td> <t t-esc="l.name"/></td>
                                     <td> <t t-esc="l.product_id.name"/></td>
                                     <td style="text-align: right;"> <t t-esc="l.life_date.strftime('%d/%m/%Y')"/></td>
-                                    <td style="text-align: right;"> <t t-esc="l.product_qty" t-options='{"widget": "monetary", "display_currency": l.product_id.currency_id}'/></td>
+                                    <td style="text-align: right;"> <t t-esc="'{:,.2f}'.format(l.product_qty)"/></td>
                                     <td> <t t-esc="l.product_uom_id.name" /></td>
                                     <td style="text-align: right;"> <t t-esc="l.product_id.standard_price" t-options='{"widget": "monetary", "display_currency": l.product_id.currency_id}'/></td>
 
