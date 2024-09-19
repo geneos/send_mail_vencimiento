@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="view_product_pricelist_print" model="ir.ui.view">
+        <field name="name">Reporte de lotes a vencer</field>
+        <field name="model">stock.production.vencimientos_lotes</field>
+        <field name="arch" type="xml">
+            <form>
+                <footer>
+                    <button
+                        name="print_report"
+                        string="Generar PDF"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancelar" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="action_lotes_vence_print"
+        name="Reporte de lotes a vencer"
+        res_model="stock.production.vencimientos_lotes"
+        view_mode="form"
+        target="new"
+    />
+
+    <menuitem
+        action="action_lotes_vence_print"
+        id="menu_product_print_lotes_vence"
+        parent="sale.menu_sale_report"
+        sequence="100"
+    />
+</odoo>

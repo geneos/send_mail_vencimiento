@@ -13,6 +13,8 @@
     'data': [
         'data/template.xml',
         'report/report.xml',
+        'views/report_send_vencimiento.xml',
+        'wizards/wizard_stock_vencimientos_view.xml'
     ],
     'demo': [
     ],

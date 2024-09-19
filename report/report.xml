@@ -10,8 +10,11 @@
                       <thead>
                         <tr>
                             <th>Lote</th>
-                            <th>Producto</th>
-                            <th>Fecha Vencimiento</th>
+                            <th style="width: 40%;">Producto</th>
+                            <th style="text-align: right;">Fecha Vencimiento</th>
+                            <th style="text-align: right;">Cantidad</th>
+                            <th>Unidad</th>
+                            <th style="text-align: right;">Costo</th>
 
                         </tr>
                       </thead>
@@ -20,7 +23,10 @@
                                 <tr>
                                     <td> <t t-esc="l.name"/></td>
                                     <td> <t t-esc="l.product_id.name"/></td>
-                                    <td> <t t-esc="l.life_date.strftime('%d/%m/%Y')"/></td>
+                                    <td style="text-align: right;"> <t t-esc="l.life_date.strftime('%d/%m/%Y')"/></td>
+                                    <td style="text-align: right;"> <t t-esc="l.product_qty" t-options='{"widget": "monetary", "display_currency": l.product_id.currency_id}'/></td>
+                                    <td> <t t-esc="l.product_uom_id.name" /></td>
+                                    <td style="text-align: right;"> <t t-esc="l.product_id.standard_price" t-options='{"widget": "monetary", "display_currency": l.product_id.currency_id}'/></td>
 
                                 </tr>
                            </t>
@@ -36,9 +42,9 @@
 
     <report
             id="action_report_product"
-            model="product.template"
+            model="stock.production.lot"
             report_type="qweb-html"
-            string="product name"
+            string="Lotes a vencer en 30 dias."
             name="send_mail_vencimiento.report_product"
             file="send_mail_vencimiento.report_product"
     />
